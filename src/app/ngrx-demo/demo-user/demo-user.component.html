@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-4">
+    <div>
+      <div *ngFor="let user of users" class="p-1">
+        <button class="btn btn-default" [ngClass]="{'btn-primary': user.id === selectedUser.id}" (click)="selectUser(user.id)">
+          {{user.name}}</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <div [hidden]="!selectedUser.id">
+      <p>{{selectedUser.id}}</p>
+      <p>{{selectedUser.name}}</p>
+      <p>{{selectedUser.email}}</p>
+      <p>{{selectedUser.username}}</p>
+    </div>
+  </div>
+</div>
